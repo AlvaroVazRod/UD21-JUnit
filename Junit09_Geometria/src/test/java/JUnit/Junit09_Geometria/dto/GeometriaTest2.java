@@ -1,30 +1,12 @@
 package JUnit.Junit09_Geometria.dto;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 
 class GeometriaTest2 {
 	Geometria geo = new Geometria();
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
+	Geometria geo1 = new Geometria(4);
 
 	@Test
 	void testAreacuadrado() {
@@ -96,5 +78,13 @@ class GeometriaTest2 {
 		assertTrue(geo.figura(8) == "Trapecio");
 		assertTrue(geo.figura(9) == "Default");
 	}
-
+	@Test
+	void testGettersSetters() {
+		geo.setArea(2);
+		geo.setId(1);
+		geo.setNom("Alvaro");
+		assertTrue(geo.getArea()==2);
+		assertTrue(geo.getId()==1);
+		assertTrue(geo.getNom()=="Alvaro");
+	}
 }
